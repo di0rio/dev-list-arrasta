@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styles from "./TaskItem.module.css";
 import { AppContext } from "../../AppContent";
 import checkedIcon from "../../assets/icon-checked.svg";
+// import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 
 const TaskItem = ({ task }) => {
   const { handleTaskEdit, handleTaskDelete } = useContext(AppContext);
