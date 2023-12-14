@@ -1,5 +1,6 @@
+import * as C from "./styles";
 import { useContext } from "react";
-import styles from "./TaskItem.module.css";
+// import styles from "./TaskItem.module.css";
 import { AppContext } from "../../AppContent";
 import checkedIcon from "../../assets/icon-checked.svg";
 // import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
@@ -7,36 +8,33 @@ import checkedIcon from "../../assets/icon-checked.svg";
 const TaskItem = ({ task }) => {
   const { handleTaskEdit, handleTaskDelete } = useContext(AppContext);
   return (
-    <li
-      className={styles.container}
-      style={{ 
-        background: `${task.done ? "rgba(47, 90, 255, 0.25)" : "#151a37"}`  , 
-        border: `1px solid ${task.done ? "#2f5aff" : "#24293f"} `,
-      }}
+    <C.Container
+      // style={{ 
+      //   background: `${task.done ? "rgba(47, 90, 255, 0.25)" : "#151a37"}`  , 
+      //   border: `1px solid ${task.done ? "#2f5aff" : "#24293f"} `,
+      // }}
     >
       <label>
-        <input
-          className={styles.inputCheckbox}
+        <C.InputCheckbox
           type="checkbox"
           checked={task.done}
           onChange={(e) => handleTaskEdit(task.id, e.target.checked)}
         />
-        <div
-          className={`${styles.customCheckbox} ${
-            !task.done && styles.customCheckboxChecked
-          }`}
+        <C.CustomCheckbox
+          // className={`${styles.customCheckbox} ${
+          //   !task.done && styles.customCheckboxChecked
+          // }`}
         >
           {task.done && (
-            <div className={styles.customCheckboxChecked}>
+            <C.CustomCheckboxChecked>
               <img src={checkedIcon} alt="Icone de marcação" />
-            </div>
+            </C.CustomCheckboxChecked>
           )}
-        </div>
+        </C.CustomCheckbox>
       </label>
-      <span className={styles.taskName}>{task.name}</span>
+      <C.TaskName>{task.name}</C.TaskName>
 
-      <button
-        className={styles.trashButton}
+      <C.TrashButton
         onClick={() => handleTaskDelete(task.id)}
       >
         <svg
@@ -51,8 +49,8 @@ const TaskItem = ({ task }) => {
             fill="white"
           />
         </svg>
-      </button>
-    </li>
+      </C.TrashButton>
+    </C.Container>
   );
 };
 

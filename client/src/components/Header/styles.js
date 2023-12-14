@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
-// Header
 export const Header = styled.header`
   border-bottom: 1px solid #151a37;
 `;
 
-// Container
 export const Container = styled.div`
   max-width: 1248px;
   padding: 20px 16px;
@@ -20,20 +18,17 @@ export const Container = styled.div`
   }
 `;
 
-// Title
 export const Title = styled.h1`
   font-weight: 400;
   font-size: 2rem;
   line-height: 1;
 `;
 
-// SocialMedia
 export const SocialMedia = styled.div`
   display: flex;
   gap: 1.45rem;
 `;
 
-// Link
 export const Link = styled.a`
   width: 40px;
   height: 40px;

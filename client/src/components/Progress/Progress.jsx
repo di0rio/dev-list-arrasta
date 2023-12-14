@@ -1,33 +1,31 @@
+import * as C from "./styles";
 import { useContext } from "react";
-import Title from "../Title/Title";
-import styles from "./Progress.module.css";
 import { AppContext } from "../../AppContent";
 import imgUrl from "../../assets/img-trophy-min.png";
-
+import Title from "../Title/Title";
 
 const Progress = () => {
   const { progressBarValue } = useContext(AppContext);
   return (
-    <div className={styles.container}>
+    <C.Container>
       <Title iconName={"chart"} text={"Progresso"} />
-      <input
-        className={styles.progressBarFill}
+      <C.ProgressBarFill
         readOnly
         type="range"
         value={progressBarValue}
       />
-      <div className={styles.progressBarValues}>
+      <C.ProgressBarValue>
         <span>0%</span>
         <span>50%</span>
         <span>100%</span>
-      </div>
+      </C.ProgressBarValue>
       {progressBarValue === 100 && (
-        <div className={styles.taskCompletedMessage}>
+        <C.TaskCompletedMessage>
           <img src={imgUrl} alt="Troféu" width="40" height="40" />
           <span>Parabéns! Você completou todas as tarefas de hoje!</span>
-        </div>
+        </C.TaskCompletedMessage>
       )}
-    </div>
+    </C.Container>
   );
 };
 

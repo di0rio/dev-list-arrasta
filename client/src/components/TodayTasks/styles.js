@@ -20,16 +20,14 @@ export const Container = styled.div`
   }
 `;
 
-// TaskList
 export const TaskList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-// TodayTasksMessage
 export const TodayTasksMessage = styled.div`
-  font-family: "Roboto";
+  font-family: "Montserrat";
   font-size: 1rem;
   line-height: 150%;
   font-weight: 700;
