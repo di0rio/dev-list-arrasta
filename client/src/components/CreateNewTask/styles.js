@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   display: flex;
 `;
 
