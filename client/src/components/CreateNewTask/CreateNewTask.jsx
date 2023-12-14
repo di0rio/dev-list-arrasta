@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import Title from "../Title/Title";
-// import styles from "./CreateNewTask.module.css";
 import * as C from "./styles";
 import addIcon from "../../assets/icon-add.svg";
 import { AppContext } from "../../AppContent";
