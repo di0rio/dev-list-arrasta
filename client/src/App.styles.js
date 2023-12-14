@@ -1,41 +1,35 @@
-/* .container {
+import styled from 'styled-components';
+
+export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   background: url("./assets/background-min.png") no-repeat center center;
   background-size: cover;
-} */
+`;
 
-/* .content {
+export const Content = styled.div`
   max-width: 1248px;
   padding: 96px 16px;
   margin: 0 auto;
-  position: relative; */
-
-  /* gird separa em quadros sendo somados ex: 1fr 1fr */
-  /* display: grid;
+  position: relative;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 176px;
-} */
 
-/* @media (max-width: 1100px) {
-  .content {
+  @media (max-width: 1100px) {
     column-gap: 80px;
   }
-} */
 
-/* @media (max-width: 768) {
-  .content {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-} */
 
-/* @media (max-width: 500) {
-  .content {
+  @media (max-width: 500px) {
     padding: 48px 16px;
   }
-} */
+`;
 
-/* .divider {
+export const Divider = styled.div`
   width: 1px;
   min-height: calc(100vh - 272px);
   height: calc(100% - 192px);
@@ -43,10 +37,8 @@
   position: absolute;
   top: 96px;
   left: 50%;
-} */
 
-/* @media (max-width: 768px) {
-  .divider {
+  @media (max-width: 768px) {
     display: none;
   }
-} */
+`;

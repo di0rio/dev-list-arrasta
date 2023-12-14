@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Title from "../Title/Title";
-import styles from "./CreateNewTask.module.css";
-
+// import styles from "./CreateNewTask.module.css";
+import * as C from "./styles";
 import addIcon from "../../assets/icon-add.svg";
 import { AppContext } from "../../AppContent";
 
@@ -24,21 +24,21 @@ const CreateNewTask = () => {
   };
   
   return (
-    <div className={styles.container}>
+    <C.Container>
       <Title iconName={"pencil"} text={"Criar nova tarefa"} />
-      <form className={styles.inputContainer} onSubmit={handleSubmit}>
-        <input
+      <C.InputContainer onSubmit={handleSubmit}>
+        <C.Input
           value={inputValue}
           onChange={handleChange}
           autoFocus
           placeholder="Nome da tarefa"
           type="text"
         />
-        <button type="submit">
+        <C.Button type="submit">
           <img src={addIcon} alt="Adicionar tarefa" />
-        </button>
-      </form>
-    </div>
+        </C.Button>
+      </C.InputContainer>
+    </C.Container>
   );
 };
 

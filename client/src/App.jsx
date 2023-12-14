@@ -1,4 +1,6 @@
-import "./App.css";
+import * as C from "./App.styles";
+
+// import "./App.css";
 import CompletedTasks from "./components/CompletedTasks/CompletedTasks";
 import CreateNewTask from "./components/CreateNewTask/CreateNewTask";
 import Header from "./components/Header/Header";
@@ -7,16 +9,16 @@ import TodayTasks from "./components/TodayTasks/TodayTasks";
 
 const App = () => {
   return (
-    <div className="container">
+    <C.Container>
       <Header />
-      <section className="content">
+      <C.Content >
         <CreateNewTask />
         <TodayTasks />
-        <div className="divider" />
+        <C.Divider  />
         <Progress />
         <CompletedTasks/>
-      </section>
-    </div>
+      </C.Content>
+    </C.Container>
   );
 };
 

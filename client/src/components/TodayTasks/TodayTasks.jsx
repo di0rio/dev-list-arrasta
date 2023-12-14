@@ -1,28 +1,30 @@
+import * as C from "./styles";
+
 import { useContext } from "react";
 import Title from "../Title/Title";
-import styles from "./TodayTasks.module.css";
+// import styles from "./TodayTasks.module.css";
 import { AppContext } from "../../AppContent";
 import TaskItem from "../TaskItem/TaskItem";
 
 const TodayTasks = () => {
   const { taskList, progressBarValue } = useContext(AppContext);
   return (
-    <div className={styles.container} style={{
+    <C.Container style={{
       marginTop:`${progressBarValue === 100 ? "-107px" : "0"}`
     }}>
       <Title iconName={"list"} text={"Tarefas de hoje"} />
       {progressBarValue === 100 || taskList.length === 0 ? (
-        <span className={styles.TodayTasksMessage}>
+        <C.TodayTasksMessage>
           Você não tem tarefas disponíveis
-        </span>
+        </C.TodayTasksMessage>
       ) : (
-        <ul className={styles.taskList}>
+        <C.TaskList>
             {taskList.map(
                 (task) => !task.done && <TaskItem key={task.id} task={task} />
             )}
-        </ul>
+        </C.TaskList>
       )}
-    </div>
+    </C.Container>
   );
 };
 

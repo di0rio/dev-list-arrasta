@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import styles from "./CompletedTasks.module.css";
+import * as C from "./styles";
+// import styles from "./CompletedTasks.module.css";
 import { AppContext } from "../../AppContent";
 import Title from "../Title/Title";
 import TaskItem from "../TaskItem/TaskItem";
@@ -7,15 +8,15 @@ import TaskItem from "../TaskItem/TaskItem";
 const CompletedTasks = () => {
   const { taskList } = useContext(AppContext);
   return (
-    <div className={styles.container}>
+    <C.Container>
       <Title iconName="completed" text="Tarefas concluídas" />
 
-      <ul className={styles.taskList}>
+      <C.TaskList >
         {taskList.map(
           (task) => task.done && <TaskItem key={task.id} task={task} />
         )}
-      </ul>
-    </div>
+      </C.TaskList>
+    </C.Container>
   );
 };
 
